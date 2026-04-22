@@ -1,0 +1,97 @@
+name: Docker CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - develop
+  pull_request:
+    branches:
+      - main
+      - master
+      - develop
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ------------------------------------------
+      # 1. Checkout repository code
+      # ------------------------------------------
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ------------------------------------------
+      # 2. Set up Docker Buildx
+      # ------------------------------------------
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # ------------------------------------------
+      # 3. Build Docker image
+      # ------------------------------------------
+      - name: Build Docker image
+        run: docker build -t telco-churn-api .
+
+      # ------------------------------------------
+      # 4. Run container in detached mode
+      # ------------------------------------------
+      - name: Run Docker container
+        run: docker run -d -p 8000:8000 --name telco-churn-container telco-churn-api
+
+      # ------------------------------------------
+      # 5. Wait for FastAPI app to start
+      # ------------------------------------------
+      - name: Wait for application startup
+        run: sleep 15
+
+      # ------------------------------------------
+      # 6. Smoke test health endpoint
+      # ------------------------------------------
+      - name: Test health endpoint
+        run: curl --fail http://127.0.0.1:8000/health
+
+      # ------------------------------------------
+      # 7. Smoke test prediction endpoint
+      # ------------------------------------------
+      - name: Test predict endpoint
+        run: |
+          curl --fail -X POST "http://127.0.0.1:8000/predict" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "gender": "Male",
+              "SeniorCitizen": 0,
+              "Partner": "No",
+              "Dependents": "No",
+              "tenure": 2,
+              "PhoneService": "Yes",
+              "MultipleLines": "No",
+              "InternetService": "Fiber optic",
+              "OnlineSecurity": "No",
+              "OnlineBackup": "No",
+              "DeviceProtection": "No",
+              "TechSupport": "No",
+              "StreamingTV": "Yes",
+              "StreamingMovies": "Yes",
+              "Contract": "Month-to-month",
+              "PaperlessBilling": "Yes",
+              "PaymentMethod": "Electronic check",
+              "MonthlyCharges": 89.9,
+              "TotalCharges": 179.8
+            }'
+
+      # ------------------------------------------
+      # 8. Show container logs if needed
+      # ------------------------------------------
+      - name: Show container logs
+        if: always()
+        run: docker logs telco-churn-container
+
+      # ------------------------------------------
+      # 9. Stop and remove container
+      # ------------------------------------------
+      - name: Clean up container
+        if: always()
+        run: docker rm -f telco-churn-container

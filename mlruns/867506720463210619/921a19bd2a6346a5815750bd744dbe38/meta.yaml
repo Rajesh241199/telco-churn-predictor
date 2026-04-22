@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/RAJESH/Documents/Telco_churn/mlruns/867506720463210619/921a19bd2a6346a5815750bd744dbe38/artifacts
+end_time: 1776670323228
+entry_point_name: ''
+experiment_id: '867506720463210619'
+lifecycle_stage: active
+run_id: 921a19bd2a6346a5815750bd744dbe38
+run_name: gregarious-quail-272
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776670317846
+status: 3
+tags: []
+user_id: RAJESH

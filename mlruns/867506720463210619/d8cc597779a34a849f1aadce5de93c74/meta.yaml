@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/RAJESH/Documents/Telco_churn/mlruns/867506720463210619/d8cc597779a34a849f1aadce5de93c74/artifacts
+end_time: 1776669311050
+entry_point_name: ''
+experiment_id: '867506720463210619'
+lifecycle_stage: active
+run_id: d8cc597779a34a849f1aadce5de93c74
+run_name: indecisive-dog-16
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776669305542
+status: 3
+tags: []
+user_id: RAJESH

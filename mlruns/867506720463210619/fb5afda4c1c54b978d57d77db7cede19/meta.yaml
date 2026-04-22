@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/RAJESH/Documents/Telco_churn/mlruns/867506720463210619/fb5afda4c1c54b978d57d77db7cede19/artifacts
+end_time: 1776670263399
+entry_point_name: ''
+experiment_id: '867506720463210619'
+lifecycle_stage: active
+run_id: fb5afda4c1c54b978d57d77db7cede19
+run_name: thundering-robin-812
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776670258806
+status: 3
+tags: []
+user_id: RAJESH

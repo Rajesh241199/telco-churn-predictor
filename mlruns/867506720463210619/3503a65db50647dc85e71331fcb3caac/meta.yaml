@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/RAJESH/Documents/Telco_churn/mlruns/867506720463210619/3503a65db50647dc85e71331fcb3caac/artifacts
+end_time: 1776668908492
+entry_point_name: ''
+experiment_id: '867506720463210619'
+lifecycle_stage: active
+run_id: 3503a65db50647dc85e71331fcb3caac
+run_name: sincere-shrike-310
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776668908374
+status: 4
+tags: []
+user_id: RAJESH

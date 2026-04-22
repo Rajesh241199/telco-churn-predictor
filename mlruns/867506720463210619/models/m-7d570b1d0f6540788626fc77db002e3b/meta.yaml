@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/RAJESH/Documents/Telco_churn/mlruns/867506720463210619/models/m-7d570b1d0f6540788626fc77db002e3b/artifacts
+creation_timestamp: 1776670318595
+experiment_id: '867506720463210619'
+last_updated_timestamp: 1776670323211
+model_id: m-7d570b1d0f6540788626fc77db002e3b
+model_type: null
+name: model
+source_run_id: 921a19bd2a6346a5815750bd744dbe38
+status: 2
+status_message: null
