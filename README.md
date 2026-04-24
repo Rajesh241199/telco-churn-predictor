@@ -134,7 +134,7 @@ FastAPI Backend (ECS Fargate, port 8000)
 XGBoost Model + Preprocessing Artifacts
 ```
 ## High-Level Deployment Flow
-
+```
 Local Development
     ↓
 Docker Build
@@ -144,3 +144,4 @@ Amazon ECR
 Amazon ECS Fargate
     ↓
 Public UI + Backend API
+```
