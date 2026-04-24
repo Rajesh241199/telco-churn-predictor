@@ -28,7 +28,6 @@ An end-to-end machine learning project that predicts telecom customer churn usin
 - [Current Limitations](#current-limitations)
 - [Future Improvements](#future-improvements)
 - [Key Learnings](#key-learnings)
-- [Resume / Portfolio Summary](#resume--portfolio-summary)
 
 ---
 
